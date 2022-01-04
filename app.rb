@@ -1,5 +1,10 @@
+require_relative './books/create_a_book'
+require 'pry'
+
 class App
   def initialize
+    @list_of_books = []
+    @create_new_book = CreateNewBook.new(@list_of_books)
     @selection = {
       '1' => 'List all books',
       '2' => 'List all music albums',
@@ -20,5 +25,20 @@ class App
     @selection.each { |key, value| puts "\t #{key}) #{value}" }
     choice = gets.chomp
     puts(choice)
+    case choice
+    when '1' then list_all_books
+    when '2' then list_all_music_albums
+    when '3' then list_all_games
+    when '4' then list_genres
+    when '5' then list_labels
+    when '6' then list_authors
+    when '7' then @create_new_book.ask_info
+    when '8' then add_music_album
+    when '9' then add_game
+    when '10' then exit #needs to be replaced with some storing function
+    else
+      puts 'Invalid selection'
+      start
+    end
   end
 end
