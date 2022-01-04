@@ -31,7 +31,3 @@ class Item
     @archived = true if can_be_archived?
   end
 end
-
-book=  Item.new
-
-book.add_genre
