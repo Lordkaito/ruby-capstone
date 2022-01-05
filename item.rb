@@ -20,8 +20,8 @@ class Item
   end
 
   def add_label(label)
-    @lable = lable
-    lable.items << self unless lable.items.include?(self)
+    @label = label
+    label.items << self unless label.items.include?(self)
   end
 
   def can_be_archived?

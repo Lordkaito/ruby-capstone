@@ -35,7 +35,7 @@ class App
     when '7' then @create_new_book.ask_info
     when '8' then add_music_album
     when '9' then add_game
-    when '10' then exit #needs to be replaced with some storing function
+    when '10' then exit # needs to be replaced with some storing function
     else
       puts 'Invalid selection'
       start
