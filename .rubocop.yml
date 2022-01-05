@@ -50,3 +50,7 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
+CyclomaticComplexity:
+  Max: 20
+Lint/UnusedBlockArgument:
+  Enabled: false
