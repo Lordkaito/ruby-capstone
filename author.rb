@@ -1,4 +1,3 @@
-require 'pry'
 require_relative './game'
 require_relative './item'
 class Author
