@@ -1,22 +1,32 @@
-class CreateMusicAlbum
+class MusicAlbum
   def initialize
     @musics = []
+    @babels = []
   end
 
-  # 8 - list all music_album
-  def music_album_list
+  # 2 - list all music_album
+  def list_music_albums
     if @musics.length.positive?
       @musics.each do |music|
         puts " Name: #{music.name}, Publish_date: #{music.publish_date}"
       end
     else
-      puts 'No music added yet!'
+      puts 'No music_album added yet!'
     end
   end
 
+ # 2 - list all list_labels
+  def list_labels
+    if @labels.length.positive?
+      @labels.each do |label|
+        puts " title: #{label.title}, color: #{label.color}"
+      end
+    else
+      puts 'There is no label added yet!'
+    end
+  end
 
-
-  # '4 - Create a music album',
+  # '8 - Create a music album',
   def create_music_album
     print('Name: ')
     name = gets.chomp
@@ -28,3 +38,22 @@ class CreateMusicAlbum
     @musics << MusicAlbum.new(name, on_spotify, publish_date)
     puts('MusicAlbum created successfully!')
   end
+
+  # '6 - List all rentals for a given person id',
+  def rentals_list
+    puts('Rentals: ')
+    puts
+    print('ID of person: ')
+    selected_id = gets.chomp.to_i
+    puts('Rentals: ')
+
+    @rentals.each do |rental|
+      # binding.pry
+      next unless rental.person.id == selected_id
+
+      puts
+      puts("Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}")
+      puts
+    end
+  end
+end
