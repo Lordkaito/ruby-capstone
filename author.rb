@@ -1,3 +1,6 @@
+require 'pry'
+require_relative './game'
+require_relative './item'
 class Author
   attr_accessor :first_name, :last_name, :id, :items
 
