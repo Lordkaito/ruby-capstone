@@ -26,15 +26,15 @@ class App
     choice = gets.chomp
     puts(choice)
     case choice
-    when '1' then list_all_books
-    when '2' then list_all_music_albums
-    when '3' then list_all_games
-    when '4' then list_genres
-    when '5' then list_labels
-    when '6' then list_authors
-    when '7' then @create_new_book.ask_info
-    when '8' then add_music_album
-    when '9' then add_game
+    when '1' then list_all_books # isai
+    when '2' then list_all_music_albums # ben
+    when '3' then list_all_games # amin
+    when '4' then list_source # amin
+    when '5' then list_labels # ben
+    when '6' then list_authors # isai
+    when '7' then @create_new_book.ask_info # isai
+    when '8' then add_music_album # ben
+    when '9' then add_game # amin
     when '10' then exit # needs to be replaced with some storing function
     else
       puts 'Invalid selection'
