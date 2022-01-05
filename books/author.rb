@@ -1,5 +1,5 @@
-require_relative './game'
-require_relative './item'
+require_relative '../games/game'
+require_relative '../item'
 class Author
   attr_accessor :first_name, :last_name, :id, :items
 
