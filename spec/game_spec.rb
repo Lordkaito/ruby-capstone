@@ -4,7 +4,7 @@ require_relative '../books/author'
 describe Game do
   before :each do
     @rockstar = Author.new('rockstar', 'inc')
-    @gta = Game.new(true, '2018-11-10', '2007-11-10')
+    @gta = Game.new('GTA', true, '2018-11-10', '2007-11-10')
     @rockstar.add_item(@gta)
   end
 

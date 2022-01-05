@@ -1,10 +1,13 @@
 require_relative './books/create_a_book'
-require 'pry'
+require_relative './games/add_game'
 
 class App
+  attr_accessor :list_of_games
+
   def initialize
     @list_of_books = []
     @create_new_book = CreateNewBook.new(@list_of_books)
+    @list_of_games = []
     @selection = {
       '1' => 'List all books',
       '2' => 'List all music albums',
@@ -40,5 +43,10 @@ class App
       puts 'Invalid selection'
       start
     end
+  end
+
+  def add_game
+    AddGame.new.adding(@list_of_games)
+    start
   end
 end
