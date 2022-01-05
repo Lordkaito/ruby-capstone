@@ -1,5 +1,6 @@
 require_relative './books/create_a_book'
 require_relative './games/add_game'
+require_relative './games/list_games'
 
 class App
   attr_accessor :list_of_games
@@ -47,6 +48,11 @@ class App
 
   def add_game
     AddGame.new.adding(@list_of_games)
+    start
+  end
+
+  def list_all_games
+    ListGames.new.listing(@list_of_games)
     start
   end
 end
