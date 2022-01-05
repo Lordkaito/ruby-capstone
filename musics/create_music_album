@@ -3,6 +3,17 @@ class CreateMusicAlbum
     @musics = []
   end
 
+  # 8 - list all music_album
+  def music_album_list
+    if @musics.length.positive?
+      @musics.each do |music|
+        puts " Name: #{music.name}, Publish_date: #{music.publish_date}"
+      end
+    else
+      puts 'No music added yet!'
+    end
+  end
+
 
 
   # '4 - Create a music album',
