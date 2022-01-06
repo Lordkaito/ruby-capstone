@@ -1,6 +1,7 @@
 require_relative './books/create_a_book'
 require_relative './games/add_game'
 require_relative './games/list_games'
+require_relative './games/list_sources'
 
 class App
   attr_accessor :list_of_games, :list_of_sources
@@ -14,7 +15,7 @@ class App
       '1' => 'List all books',
       '2' => 'List all music albums',
       '3' => 'List of games',
-      '4' => 'List all genres',
+      '4' => 'List all sources',
       '5' => 'List all labels',
       '6' => 'List all authors',
       '7' => 'Add a book',
@@ -33,7 +34,7 @@ class App
     when '1' then list_all_books # isai
     when '2' then list_all_music_albums # ben
     when '3' then list_all_games # amin
-    when '4' then list_source # amin
+    when '4' then list_sources # amin
     when '5' then list_labels # ben
     when '6' then list_authors # isai
     when '7' then @create_new_book.ask_info # isai
@@ -53,6 +54,11 @@ class App
 
   def list_all_games
     ListGames.new.listing(@list_of_games)
+    start
+  end
+
+  def list_sources
+    ListSources.new.listing(@list_of_sources)
     start
   end
 end
