@@ -16,7 +16,7 @@ class HandleSource
 
   def exists(game, sources)
     show_sources(sources)
-    puts 'Which source ? Any input will give you the ability to create a new source'
+    puts 'Which source ? Any other input will give you the ability to create a new source'
     selection = gets.chomp.to_i
     if (1..sources.length).include?(selection)
       game.add_source(sources[selection - 1])
