@@ -50,7 +50,7 @@ class App
     when '7' then create_book # isai
     when '8' then add_music_album # ben
     when '9' then add_game # amin
-    when '10' then exit # needs to be replaced with some storing function
+    when '10' then SaveAndExit.new.store(@list_of_books, @list_music_albums, @list_of_games)
     else
       puts 'Invalid selection'
       start
