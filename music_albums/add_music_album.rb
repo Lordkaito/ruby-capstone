@@ -4,7 +4,7 @@ require_relative './handle_label'
 
 class AddMusicAlbum
   def adding(array, labels)
-    puts 'Insert a name for the music_album'
+    puts 'Insert a Name for the music_album'
     name = gets.chomp
     puts 'Is your music_album on_spotify ? [Y | N]'
     on_spotify = gets.chomp
@@ -15,7 +15,7 @@ class AddMusicAlbum
                     false
                   end
 
-    puts 'Insert publish date in this format YYYY-MM-DD'
+    puts 'Insert Publish date in this format YYYY-MM-DD'
     publish_date = gets.chomp.to_s
     until date_checker(publish_date)
       puts "Incorrect date format, #{publish_date} is not valid YYYY-MM-DD date"

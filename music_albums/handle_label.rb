@@ -20,7 +20,7 @@ class HandleLabel
     selection = gets.chomp.to_i
     if (1..labels.length).include?(selection)
       music_album.add_label(labels[selection - 1])
-      puts "#{music_album.name} added to #{labels[selection - 1].name} successfully"
+      puts "#{music_album.name} added to #{labels[selection - 1].title} successfully"
     else
       doesnt_exist(music_album, labels)
     end

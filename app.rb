@@ -4,6 +4,7 @@ require_relative './games/list_games'
 require_relative './games/list_sources'
 require_relative './music_albums/add_music_album'
 require_relative './music_albums/list_music_albums'
+require_relative './music_albums/list_labels'
 
 require 'pry'
 
@@ -71,7 +72,7 @@ class App
 
   #  music album
   def add_music_album
-    AddMusicAlbum.new.adding(@list_music_albums, @list_labels)
+    AddMusicAlbum.new.adding(@list_music_albums, @list_of_labels)
     start
   end
 
@@ -81,7 +82,7 @@ class App
   end
 
   def list_labels
-    ListSources.new.listing(@list_of_labels)
+    ListLabels.new.listing(@list_of_labels)
     start
   end
 end
