@@ -4,7 +4,7 @@ require_relative '../musics/label'
 describe MusicAlbum do
   before :each do
     @mysic = Label.new('Gospel', 'Red')
-    @release = MusicAlbum.new(true, '2007-11-10')
+    @release = MusicAlbum.new('Song', true, '2007-11-10')
     @mysic.add_item(@release)
   end
 
