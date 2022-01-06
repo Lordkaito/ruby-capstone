@@ -7,11 +7,13 @@ class HandleAuthor
       doesnt_exist(book, authors)
     end
   end
+
   def show_authors(authors)
     authors.each do |author|
       puts "#{authors.find_index(author) + 1} ) #{author.name}"
     end
   end
+
   def exists(book, authors)
     show_authors(authors)
     puts 'Which author ? Any other input will give you the ability to create a new author'
@@ -23,6 +25,7 @@ class HandleAuthor
       doesnt_exist(book, authors)
     end
   end
+
   def doesnt_exist(book, authors)
     if authors.length.positive?
       puts 'Invalid Selection, would you like to create a new author ? [ Y | N ]'
@@ -33,9 +36,10 @@ class HandleAuthor
     if selection == 'y'
       create_author(book, authors)
     else
-    puts 'book was created successfully, but was not assigned to any author :('
+      puts 'book was created successfully, but was not assigned to any author :('
     end
   end
+
   def create_author(book, authors)
     puts 'Insert the author name'
     first_name = gets.chomp

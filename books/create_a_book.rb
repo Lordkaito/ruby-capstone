@@ -8,6 +8,7 @@ class CreateNewBook
     publish_date = book_publish_date
     Book.new(title, publisher, publish_date, cover_state)
   end
+
   def ask_info(books, authors)
     system 'clear'
     puts 'Enter the name of the book:'
@@ -22,6 +23,7 @@ class CreateNewBook
     books << new_book
     author_choice(new_book, authors)
   end
+
   def author_choice(book, authors)
     puts 'The book was created successfully !'
     puts 'Would you like to give additional information about its author ? Y | N'

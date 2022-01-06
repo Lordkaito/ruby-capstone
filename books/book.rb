@@ -14,6 +14,3 @@ class Book < Item
     super || @cover_state == 'bad'
   end
 end
-
-isai = Book.new('Isai', 'Penguin', '19-05-2018', 'good')
-isai.can_be_archived?
