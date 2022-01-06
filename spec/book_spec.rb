@@ -4,7 +4,7 @@ require_relative '../books/author'
 describe Book do
   before :each do
     @my_author = Author.new('JK', 'Rowling')
-    @harry = Book.new('HP', 'Bloomsbury', 'good')
+    @harry = Book.new('HP', 'Bloomsbury', '1111-11-11', 'good')
     @my_author.add_item(@harry)
   end
 

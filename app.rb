@@ -1,4 +1,6 @@
 require_relative './books/create_a_book'
+require_relative './books/list_all_books'
+require_relative './books/list_all_authors'
 require_relative './games/add_game'
 require_relative './games/list_games'
 require_relative './games/list_sources'
@@ -8,7 +10,7 @@ class App
 
   def initialize
     @list_of_books = []
-    @create_new_book = CreateNewBook.new(@list_of_books)
+    @list_of_authors = []
     @list_of_games = []
     @list_of_sources = []
     @selection = {
@@ -37,7 +39,7 @@ class App
     when '4' then list_sources # amin
     when '5' then list_labels # ben
     when '6' then list_authors # isai
-    when '7' then @create_new_book.ask_info # isai
+    when '7' then create_book # isai
     when '8' then add_music_album # ben
     when '9' then add_game # amin
     when '10' then exit # needs to be replaced with some storing function
@@ -45,6 +47,24 @@ class App
       puts 'Invalid selection'
       start
     end
+  end
+
+  def create_book
+    system 'clear'
+    CreateNewBook.new.ask_info(@list_of_books, @list_of_authors)
+    start
+  end
+
+  def list_all_books
+    system 'clear'
+    ListAllBooks.new.list_books(@list_of_books)
+    start
+  end
+
+  def list_authors
+    system 'clear'
+    ListAllAuthors.new.list_authors(@list_of_authors)
+    start
   end
 
   def add_game

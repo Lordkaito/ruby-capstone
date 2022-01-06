@@ -1,4 +1,5 @@
 require_relative './source'
+require 'pry'
 class HandleSource
   def create(game, sources)
     if sources.length.positive?
@@ -33,8 +34,11 @@ class HandleSource
       puts 'There are no sources added yet, Would you like to create one ? [ Y | N ]'
     end
     selection = gets.chomp.downcase
-    create_source(game, sources) if selection == 'y'
-    puts 'Game was created successfully, but was not assigned to any source :('
+    if selection == 'y'
+      create_source(game, sources)
+    else
+      puts 'Game was created successfully, but was not assigned to any source :('
+    end
   end
 
   def create_source(game, sources)
