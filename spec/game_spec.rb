@@ -4,7 +4,7 @@ require_relative '../games/source'
 describe Game do
   before :each do
     @rockstar = Source.new('rockstar')
-    @gta = Game.new(true, '2018-11-10', '2007-11-10')
+    @gta = Game.new('GTA', true, '2018-11-10', '2007-11-10')
     @rockstar.add_item(@gta)
   end
 
@@ -12,7 +12,7 @@ describe Game do
     expect(@gta).to be_instance_of Game
   end
 
-  it 'shows instance of Author class' do
+  it 'shows instance of Source class' do
     expect(@rockstar).to be_instance_of Source
   end
 
