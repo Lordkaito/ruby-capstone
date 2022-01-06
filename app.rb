@@ -80,4 +80,8 @@ class App
     start
   end
 
+  def list_labels
+    ListSources.new.listing(@list_of_labels)
+    start
+  end
 end
