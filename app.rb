@@ -3,12 +3,13 @@ require_relative './games/add_game'
 require_relative './games/list_games'
 
 class App
-  attr_accessor :list_of_games
+  attr_accessor :list_of_games, :list_of_sources
 
   def initialize
     @list_of_books = []
     @create_new_book = CreateNewBook.new(@list_of_books)
     @list_of_games = []
+    @list_of_sources = []
     @selection = {
       '1' => 'List all books',
       '2' => 'List all music albums',
@@ -28,7 +29,6 @@ class App
     puts 'Select by entering a number.'
     @selection.each { |key, value| puts "\t #{key}) #{value}" }
     choice = gets.chomp
-    puts(choice)
     case choice
     when '1' then list_all_books # isai
     when '2' then list_all_music_albums # ben
@@ -47,7 +47,7 @@ class App
   end
 
   def add_game
-    AddGame.new.adding(@list_of_games)
+    AddGame.new.adding(@list_of_games, @list_of_sources)
     start
   end
 

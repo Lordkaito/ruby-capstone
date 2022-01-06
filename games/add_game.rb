@@ -1,7 +1,8 @@
 require 'date'
 require_relative './game'
+require_relative './handle_source'
 class AddGame
-  def adding(array)
+  def adding(array, sources)
     puts 'Insert a name for the game'
     name = gets.chomp
     puts 'Is your game multiplayer ? [Y | N]'
@@ -24,8 +25,9 @@ class AddGame
       puts "Incorrect date format, #{publish_date} is not valid YYYY-MM-DD date"
       publish_date = gets.chomp.to_s
     end
-    array << Game.new(name, multiplayer, last_date, publish_date)
-    source_choice
+    new_game = Game.new(name, multiplayer, last_date, publish_date)
+    array << new_game
+    source_choice(new_game, sources)
   end
 
   def date_checker(date)
@@ -36,10 +38,10 @@ class AddGame
     false
   end
 
-  def source_choice
+  def source_choice(new_game, sources)
     puts 'The game was created successfully !'
     puts 'Would you like to give additional information about its source ? Y | N'
     choice = gets.chomp
-    handle_source if choice.downcase == 'y'
+    HandleSource.new.create(new_game, sources) if choice.downcase == 'y'
   end
 end
