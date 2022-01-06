@@ -15,7 +15,7 @@ class MusicAlbum
     end
   end
 
- # 2 - list all list_labels
+ # 5 - list all list_labels
   def list_labels
     if @labels.length.positive?
       @labels.each do |label|
@@ -27,33 +27,28 @@ class MusicAlbum
   end
 
   # '8 - Create a music album',
-  def create_music_album
+  def create_music_albums
     print('Name: ')
     name = gets.chomp
     print 'It\'s on_spotify? [Y/N]: '
     on_spotify = gets.chomp != 'n'
     print('publish_date: ')
     publish_date = gets.chomp
+  
+    print 'Would you like to give some additional informations? [Y/N]: '
+    label_action = gets.chomp != 'n'
 
+    # if(label_action)
+    #   print('Title: ')
+    #   title = gets.chomp
+    #   print('Color: ')
+    #   color = gets.chomp
+    # end
+  
     @musics << MusicAlbum.new(name, on_spotify, publish_date)
     puts('MusicAlbum created successfully!')
   end
-
-  # '6 - List all rentals for a given person id',
-  def rentals_list
-    puts('Rentals: ')
-    puts
-    print('ID of person: ')
-    selected_id = gets.chomp.to_i
-    puts('Rentals: ')
-
-    @rentals.each do |rental|
-      # binding.pry
-      next unless rental.person.id == selected_id
-
-      puts
-      puts("Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}")
-      puts
-    end
-  end
 end
+
+new_music = MusicAlbum.new
+new_music.create_music_albums

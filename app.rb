@@ -1,4 +1,5 @@
 require_relative './books/create_a_book'
+require_relative './musics/create_music_album'
 require 'pry'
 
 class App
@@ -33,7 +34,7 @@ class App
     when '5' then list_labels # ben
     when '6' then list_authors # isai
     when '7' then @create_new_book.ask_info # isai
-    when '8' then add_music_album # ben
+    when '8' then create_music_album # ben
     when '9' then add_game # amin
     when '10' then exit # needs to be replaced with some storing function
     else
