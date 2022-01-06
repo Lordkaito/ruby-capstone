@@ -64,6 +64,7 @@ class App
   def list_authors
     system 'clear'
     ListAllAuthors.new.list_authors(@list_of_authors)
+    start
   end
 
   def add_game
