@@ -1,5 +1,5 @@
 require_relative '../games/game'
-require_relative '../books/author'
+require_relative '../games/source'
 
 describe Game do
   before :each do
@@ -13,7 +13,7 @@ describe Game do
   end
 
   it 'shows instance of Author class' do
-    expect(@rockstar).to be_instance_of Author
+    expect(@rockstar).to be_instance_of Source
   end
 
   it 'is multiplayer ?' do
