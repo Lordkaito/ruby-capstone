@@ -1,7 +1,6 @@
-require_relative '../games/game'
-require_relative '../item'
 class Author
-  attr_accessor :first_name, :last_name, :id, :items
+  attr_accessor :first_name, :last_name, :items
+  attr_reader :id
 
   def initialize(first_name, last_name)
     @id = rand(1...1000)

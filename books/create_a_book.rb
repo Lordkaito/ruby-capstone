@@ -1,22 +1,34 @@
 require_relative './book'
+require_relative './handle_authors'
 
 class CreateNewBook
-  def initialize(books)
-    @books = books
-  end
-
-  def create_book(book_publisher, book_cover_state)
+  def create_book(name, book_publisher, book_publish_date, book_cover_state, books)
+    title = name
     publisher = book_publisher
     cover_state = book_cover_state
-    @books << Book.new(publisher, cover_state)
+    publish_date = book_publish_date
+    books << Book.new(title, publisher, publish_date, cover_state)
   end
 
-  def ask_info
+  def ask_info(books, authors)
     system 'clear'
-    print 'Enter the publisher: '
+    puts 'Enter the name of the book:'
+    book_name = gets.chomp
+    puts 'Enter the publisher: '
     book_publisher = gets.chomp
-    print 'Enter the cover state: '
+    puts 'Enter the cover state: '
     book_cover_state = gets.chomp
-    create_book(book_publisher, book_cover_state)
+    puts 'Enter the publish date: '
+    book_publish_date = gets.chomp
+    new_book = create_book(book_name, book_publisher, book_publish_date, book_cover_state, books)
+
+    author_choice(new_book, authors)
+  end
+
+  def author_choice(book, authors)
+    puts 'The book was created successfully !'
+    puts 'Would you like to give additional information about its author ? Y | N'
+    choice = gets.chomp
+    HandleAuthor.new.create(book, authors) if choice.downcase == 'y'
   end
 end
