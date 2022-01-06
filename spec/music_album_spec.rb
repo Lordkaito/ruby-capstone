@@ -1,5 +1,5 @@
-require_relative '../musics/music_album'
-require_relative '../musics/label'
+require_relative '../music_albums/music_album'
+require_relative '../music_albums/label'
 
 describe MusicAlbum do
   before :each do

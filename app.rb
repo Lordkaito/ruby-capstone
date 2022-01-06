@@ -4,6 +4,11 @@ require_relative './books/list_all_authors'
 require_relative './games/add_game'
 require_relative './games/list_games'
 require_relative './games/list_sources'
+require_relative './music_albums/add_music_album'
+require_relative './music_albums/list_music_albums'
+require_relative './music_albums/list_labels'
+
+require 'pry'
 
 class App
   attr_accessor :list_of_games, :list_of_sources
@@ -13,6 +18,9 @@ class App
     @list_of_authors = []
     @list_of_games = []
     @list_of_sources = []
+    @list_music_albums = []
+    @list_of_labels = []
+
     @selection = {
       '1' => 'List all books',
       '2' => 'List all music albums',
@@ -79,6 +87,22 @@ class App
 
   def list_sources
     ListSources.new.listing(@list_of_sources)
+    start
+  end
+
+  #  music album
+  def add_music_album
+    AddMusicAlbum.new.adding(@list_music_albums, @list_of_labels)
+    start
+  end
+
+  def list_all_music_albums
+    ListMusicAlbums.new.listing(@list_music_albums)
+    start
+  end
+
+  def list_labels
+    ListLabels.new.listing(@list_of_labels)
     start
   end
 end
