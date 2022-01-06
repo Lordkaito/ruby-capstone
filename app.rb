@@ -2,7 +2,9 @@ require_relative './books/create_a_book'
 require_relative './games/add_game'
 require_relative './games/list_games'
 require_relative './games/list_sources'
-require_relative './musics/add_music_album'
+require_relative './music_albums/add_music_album'
+require_relative './music_albums/list_music_albums'
+
 require 'pry'
 
 class App
@@ -13,6 +15,9 @@ class App
     @create_new_book = CreateNewBook.new(@list_of_books)
     @list_of_games = []
     @list_of_sources = []
+    @list_music_albums = []
+    @list_of_labels = []
+
     @selection = {
       '1' => 'List all books',
       '2' => 'List all music albums',
@@ -63,4 +68,16 @@ class App
     ListSources.new.listing(@list_of_sources)
     start
   end
+
+  #  music album
+  def add_music_album
+    AddMusicAlbum.new.adding(@list_music_albums, @list_labels)
+    start
+  end
+
+  def list_all_music_albums
+    ListMusicAlbums.new.listing(@list_music_albums)
+    start
+  end
+
 end
