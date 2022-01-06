@@ -10,7 +10,7 @@ class HandleLabel
 
   def show_labels(labels)
     labels.each do |label|
-      puts "#{labels.find_index(label) + 1} ) #{label.title}, #{label.color}"
+      puts "#{labels.find_index(label) + 1} ) #{label.title}"
     end
   end
 
@@ -27,16 +27,18 @@ class HandleLabel
   end
 
   def doesnt_exist(music_album, labels)
-
-    puts "level 4"
+    # puts "level 4"
     if labels.length.positive?
       puts 'Invalid Selection, would you like to create a new label ? [ Y | N ]'
     else
       puts 'There are no labels added yet, Would you like to create one ? [ Y | N ]'
     end
     selection = gets.chomp.downcase
-    create_label(music_album, labels) if selection == 'y'
-    puts 'Music_album was created successfully, but was not assigned to any label :('
+    if selection == 'y'
+      create_label(music_album, labels)
+    else
+      puts 'Music_album was created successfully, but was not assigned to any label :('
+    end
   end
 
   def create_label(music_album, labels)

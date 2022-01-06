@@ -1,12 +1,14 @@
+require 'pry'
 class ListLabels
   puts '0'
   def listing(array)
     if array.length.positive?
       array.each do |label|
         puts '--------------------------'
-        puts label.title.to_s
-        puts "Mucic_albums : #{music_album_list(label)}"
-        puts label.color.to_s
+        puts "Title : #{label.title} | Color : #{label.color}"
+        # puts label.title.to_s
+        # puts label.color.to_s
+        puts "Mucic albums : #{music_album_list(label)}"
         puts '--------------------------'
       end
     else
@@ -18,8 +20,7 @@ class ListLabels
     arr_music_albums = []
     if labels.items.length.positive?
       labels.items.each do |label|
-        arr_music_albums << label.title
-        arr_music_albums << label.color
+        arr_music_albums << label.name
       end
       arr_music_albums.join(' | ')
     else

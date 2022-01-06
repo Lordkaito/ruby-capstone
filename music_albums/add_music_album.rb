@@ -9,11 +9,11 @@ class AddMusicAlbum
     puts 'Is your music_album on_spotify ? [Y | N]'
     on_spotify = gets.chomp
     on_spotify = case on_spotify.downcase
-                  when 'y'
-                    true
-                  else
-                    false
-                  end
+                 when 'y'
+                   true
+                 else
+                   false
+                 end
 
     puts 'Insert Publish date in this format YYYY-MM-DD'
     publish_date = gets.chomp.to_s
