@@ -7,6 +7,7 @@ require_relative './games/list_sources'
 require_relative './music_albums/add_music_album'
 require_relative './music_albums/list_music_albums'
 require_relative './music_albums/list_labels'
+require_relative './save_and_exit'
 
 require 'pry'
 
