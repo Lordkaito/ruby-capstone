@@ -10,6 +10,10 @@
 
 ![Screenshot](./screenshot.png)
 
+## EDL DIAGRAM
+
+![Screenshot](./DB_EDL_DIAGRAM.png)
+
 ## Learning objectives
 - Insert and query data in SQL.
 - Understand the different types of relationships between tables.
