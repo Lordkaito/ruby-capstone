@@ -36,7 +36,7 @@ class App
   end
 
   def load
-    LoadData.new.load(@list_of_games, @list_of_sources)
+    LoadData.new.load(@list_of_games, @list_of_sources, @list_of_books, @list_of_authors)
     start
   end
 
@@ -46,15 +46,15 @@ class App
     @selection.each { |key, value| puts "\t #{key}) #{value}" }
     choice = gets.chomp
     case choice
-    when '1' then list_all_books # isai
-    when '2' then list_all_music_albums # ben
-    when '3' then list_all_games # amin
-    when '4' then list_sources # amin
-    when '5' then list_labels # ben
-    when '6' then list_authors # isai
-    when '7' then create_book # isai
-    when '8' then add_music_album # ben
-    when '9' then add_game # amin
+    when '1' then list_all_books
+    when '2' then list_all_music_albums
+    when '3' then list_all_games
+    when '4' then list_sources
+    when '5' then list_labels
+    when '6' then list_authors
+    when '7' then create_book
+    when '8' then add_music_album
+    when '9' then add_game
     when '10' then SaveAndExit.new.store(@list_of_books, @list_music_albums, @list_of_games)
     else
       puts 'Invalid selection'

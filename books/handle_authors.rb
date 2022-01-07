@@ -10,7 +10,7 @@ class HandleAuthor
 
   def show_authors(authors)
     authors.each do |author|
-      puts "#{authors.find_index(author) + 1} ) #{author.name}"
+      puts "#{authors.find_index(author) + 1} ) #{author.first_name} #{author.last_name}"
     end
   end
 
