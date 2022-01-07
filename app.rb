@@ -11,7 +11,8 @@ require_relative './save_and_exit'
 require_relative './load_data'
 
 class App
-  attr_accessor :list_of_games, :list_of_sources
+  # attr_accessor :list_of_games, :list_of_sources
+  attr_accessor :list_of_books, :list_of_authors, :list_music_albums, :list_of_labels, :list_of_games, :list_of_sources
 
   def initialize()
     @list_of_books = []
@@ -36,7 +37,8 @@ class App
   end
 
   def load
-    LoadData.new.load(@list_of_games, @list_of_sources)
+    LoadData.new.load(@list_of_games, @list_of_sources, @list_of_books, @list_of_authors, @list_music_albums,
+                      @list_of_labels)
     start
   end
 

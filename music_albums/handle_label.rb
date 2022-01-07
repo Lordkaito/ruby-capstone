@@ -27,7 +27,6 @@ class HandleLabel
   end
 
   def doesnt_exist(music_album, labels)
-    # puts "level 4"
     if labels.length.positive?
       puts 'Invalid Selection, would you like to create a new label ? [ Y | N ]'
     else

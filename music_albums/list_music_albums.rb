@@ -13,8 +13,6 @@ class ListMusicAlbums
       puts "| Archiveable : #{check_bool_tostr(music_album.can_be_archived?)}"
       puts "Label/Creator : #{check_src(music_album)}"
       puts '-------------------------------------------------------------'
-      # binding.pry
-      # puts "Label/Creator22 : #{check_src(music_album[0])}"
     end
   end
 

@@ -17,8 +17,7 @@ class SaveMusicAlbums
 
   def fetch_label(music_album)
     if music_album.label
-      music_album.label.title
-      # music_album.label.color
+      [music_album.label.title, music_album.label.color]
     else
       false
     end

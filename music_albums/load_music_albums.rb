@@ -18,7 +18,7 @@ class LoadMusicAlbums
     if found.length.positive?
       found[0][:src_obj].add_item(new_music_album)
     else
-      label = Label.new(new_src_name)
+      label = Label.new(new_src_name[0], new_src_name[1])
       used_labels << { src_name: new_src_name, src_obj: label }
       label.add_item(new_music_album)
       labels << label

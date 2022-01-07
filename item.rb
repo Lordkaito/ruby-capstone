@@ -31,6 +31,5 @@ class Item
 
   def move_to_archive
     @archived = true if can_be_archived?
-    # We need to check this for books, because when adding "bad" cover state, it's not doing what we expected
   end
 end

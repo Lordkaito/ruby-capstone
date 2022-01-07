@@ -6,8 +6,6 @@ class ListLabels
       array.each do |label|
         puts '--------------------------'
         puts "Title : #{label.title} | Color : #{label.color}"
-        # puts label.title.to_s
-        # puts label.color.to_s
         puts "Mucic albums : #{music_album_list(label)}"
         puts '--------------------------'
       end
