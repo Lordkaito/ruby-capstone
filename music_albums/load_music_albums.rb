@@ -5,7 +5,7 @@ class LoadMusicAlbums
   end
 
   def recreate_music_albums(music_albums, labels, file)
-    used_labelss = []
+    used_labels = []
     JSON.parse(File.read(file)).each do |music_album|
       new_music_album = MusicAlbum.new(music_album['name'], music_album['on_spotify'], music_album['publish_date'])
       music_albums << new_music_album

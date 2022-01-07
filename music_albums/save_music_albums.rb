@@ -20,7 +20,7 @@ class SaveMusicAlbums
       music_album.label.title
       # music_album.label.color
     else
-     false
+      false
     end
   end
 
