@@ -8,13 +8,14 @@ require_relative './music_albums/add_music_album'
 require_relative './music_albums/list_music_albums'
 require_relative './music_albums/list_labels'
 require_relative './save_and_exit'
+require_relative './load_data'
 
 require 'pry'
 
 class App
   attr_accessor :list_of_games, :list_of_sources
 
-  def initialize
+  def initialize()
     @list_of_books = []
     @list_of_authors = []
     @list_of_games = []
@@ -34,6 +35,11 @@ class App
       '9' => 'Add a game',
       '10' => 'Exit'
     }
+  end
+
+  def load
+    LoadData.new.load(@list_of_games, @list_of_sources)
+    start
   end
 
   def start
@@ -91,7 +97,6 @@ class App
     start
   end
 
-  #  music album
   def add_music_album
     AddMusicAlbum.new.adding(@list_music_albums, @list_of_labels)
     start

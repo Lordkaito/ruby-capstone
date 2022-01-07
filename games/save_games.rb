@@ -1,4 +1,3 @@
-require 'pry'
 require 'json'
 class SaveGames
   def save(array)
@@ -25,6 +24,6 @@ class SaveGames
   end
 
   def store_tojson(savings)
-      File.write('games/games.json', JSON.generate(savings))
+    File.write('games/games.json', JSON.generate(savings)) unless savings.empty?
   end
 end
