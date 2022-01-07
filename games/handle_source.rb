@@ -1,5 +1,4 @@
 require_relative './source'
-require 'pry'
 class HandleSource
   def create(game, sources)
     if sources.length.positive?

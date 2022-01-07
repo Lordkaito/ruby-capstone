@@ -1,6 +1,4 @@
-require 'pry'
 class ListLabels
-  puts '0'
   def listing(array)
     if array.length.positive?
       array.each do |label|

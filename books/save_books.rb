@@ -1,5 +1,4 @@
 require 'json'
-require 'pry'
 
 class SaveBooks
   def save(array)

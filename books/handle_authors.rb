@@ -20,7 +20,7 @@ class HandleAuthor
     selection = gets.chomp.to_i
     if (1..authors.length).include?(selection)
       book.add_author(authors[selection - 1])
-      puts "#{book.name} added to #{authors[selection - 1].name} successfully"
+      puts "#{book.name} added to #{authors[selection - 1].first_name} successfully"
     else
       doesnt_exist(book, authors)
     end

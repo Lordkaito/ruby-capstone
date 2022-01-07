@@ -6,6 +6,10 @@
 
 > In this project, we create a console app that will help us to keep a record of different types of things you won: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below. The data will be stored in JSON files but we also prepare a database with tables structure analogical to your program's class structure.
 
+## Screenshot
+
+![Screenshot](./screenshot.png)
+
 ## Learning objectives
 - Insert and query data in SQL.
 - Understand the different types of relationships between tables.

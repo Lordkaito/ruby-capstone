@@ -1,5 +1,4 @@
 require_relative './game'
-require 'pry'
 class ListGames
   def listing(array)
     puts 'No games added yet!' unless array.length.positive?

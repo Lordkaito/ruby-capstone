@@ -1,5 +1,4 @@
 require_relative './music_album'
-require 'pry'
 
 class ListMusicAlbums
   def listing(array)

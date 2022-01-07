@@ -1,7 +1,6 @@
-require 'pry'
 class LoadBooks
   def load_books(books, authors)
-    file = './books/data/books.json'
+    file = './books/books.json'
     recreate_books(books, authors, file) if File.exist? file
   end
 
