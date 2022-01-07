@@ -10,8 +10,6 @@ require_relative './music_albums/list_labels'
 require_relative './save_and_exit'
 require_relative './load_data'
 
-require 'pry'
-
 class App
   attr_accessor :list_of_games, :list_of_sources
 
