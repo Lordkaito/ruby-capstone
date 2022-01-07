@@ -54,3 +54,5 @@ CyclomaticComplexity:
   Max: 20
 Lint/UnusedBlockArgument:
   Enabled: false
+Metrics/ParameterLists:
+  Enabled: false
